@@ -2,21 +2,6 @@
 import streamlit as st
 from snowflake.snowpark.functions import col
 
-import snowflake.connector
-
-conn = snowflake.connector.connect(
-    account="MULLIXP.XIB11997",
-    user="KRISTIAN",
-    password="Langtved1880!",
-    warehouse="COMPUTE_WH",
-    database="SMOOTHIES",
-    schema="PUBLIC"
-)
-
-cur = conn.cursor()
-cur.execute("SELECT CURRENT_USER(), CURRENT_DATABASE();")
-print(cur.fetchall())
-
 # Write directly to the app
 st.title(":cup_with_straw: Customize Your Smoothie! :cup_with_straw:")
 st.write(
